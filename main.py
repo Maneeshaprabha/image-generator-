@@ -21,7 +21,7 @@ def display_image(category):
     global photo, current_image_data  # Keep a global reference to avoid garbage collection
 
     # Make a request to the Unsplash API to get a random image
-    url = f"https://api.unsplash.com/photos/random?query={category}&orientation=landscape&client_id=eRqCPig6MYIGOPbMECRr3LhzAc34oNPOXsgYGCrgFdc"
+    url = f"https://api.unsplash.com/photos/random?query={category}&orientation=landscape&client_id="
     
     try:
         response = requests.get(url)
@@ -41,7 +41,7 @@ def download_image():
     if current_image_data:
         # Trigger a download tracking event
         photo_id = current_image_data["id"]
-        track_url = f"https://api.unsplash.com/photos/{photo_id}/download?client_id=eRqCPig6MYIGOPbMECRr3LhzAc34oNPOXsgYGCrgFdc"
+        track_url = f"https://api.unsplash.com/photos/{photo_id}/download?client_id="
         try:
             track_response = requests.get(track_url)
             track_response.raise_for_status()
